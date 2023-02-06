@@ -1,9 +1,9 @@
-from scraper import Imdb_Scraper
+from scraper import ImdbScraper
 
 
 def main():
 
-    Imdb_scraper = Imdb_Scraper()
+    Imdb_scraper = ImdbScraper()
     uri_top_250 = "https://www.imdb.com/chart/top/"
     Imdb_Top_20 = Imdb_scraper.get_top_20(uri_top_250)
 
