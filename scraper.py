@@ -3,6 +3,7 @@ from urllib.request import Request, urlopen
 from movie import Movie
 
 class ImdbScraper():
+    
     def __init__(self) -> None:
         pass
 
@@ -40,3 +41,5 @@ class ImdbScraper():
         oscar_wins = int(oscars.split()[1]) if "Won" in oscars and "Oscar" in oscars else 0
 
         return oscar_wins
+    
+    

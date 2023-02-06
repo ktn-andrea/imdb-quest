@@ -1,13 +1,11 @@
-class Penalizer():
+class RatingCalculator():
 
     def __init__(self) -> None:
         pass
 
     @staticmethod
     def penalize_movies(movies):
-
         max_num_of_ratings = max(movie.num_of_ratings for movie in movies)
-
         for movie in movies:
             print(movie.rating)
             deviation = max_num_of_ratings - movie.num_of_ratings
@@ -17,3 +15,19 @@ class Penalizer():
             movie.rating_adjusted = new_rating
             print(movie.rating_penalized)
             print('*' * 20)
+
+    @staticmethod
+    def oscar_calculator(movies):
+        for movie in movies:
+            point = 0
+            if movie.num_of_oscar_wins in [1, 2]:
+                point = 0.3
+            elif movie.num_of_oscar_wins in [3, 5]:
+                point = 0.5
+            elif movie.num_of_oscar_wins >= 6 and movie.num_of_oscar_wins <= 10:
+                point = 1.0
+            elif movie.num_of_oscar_wins > 10:
+                point = 1.5
+            movie.rating_adjusted += point
+
+        return movies

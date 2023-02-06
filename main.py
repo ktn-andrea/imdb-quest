@@ -1,6 +1,5 @@
 from scraper import ImdbScraper
-from penalizer import Penalizer
-from oscar_calculator import OscarCalculator
+from rating_calculator import RatingCalculator
 
 
 def main():
@@ -9,11 +8,9 @@ def main():
     uri_top_250 = "https://www.imdb.com/chart/top/"
     Imdb_Top_20 = Imdb_scraper.get_top_20(uri_top_250)
 
-    Movie_Penalizer = Penalizer()
-    Movie_Penalizer.penalize_movies(Imdb_Top_20)
-
-    Movie_Oscar_Calculator = OscarCalculator()
-    Movie_Oscar_Calculator.adjust_rating(Imdb_Top_20)
+    Movie_Oscar_Calculator = RatingCalculator()
+    Movie_Oscar_Calculator.penalize_movies(Imdb_Top_20)
+    Movie_Oscar_Calculator.oscar_calculator(Imdb_Top_20)
 
 
     for i in Imdb_Top_20:
