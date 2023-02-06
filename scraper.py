@@ -25,7 +25,7 @@ class Imdb_Scraper():
             num_of_ratings = int(ratings.split()[3].replace(',', '')) 
             oscars = self.get_oscar_wins(movie_uri)
             
-            movie = Movie(title, rating, num_of_ratings, oscars)
+            movie = Movie(title, rating, num_of_ratings, oscars, None)
             Imdb_Top_20.append(movie)
 
         return Imdb_Top_20
