@@ -1,4 +1,5 @@
 class Penalizer():
+
     def __init__(self) -> None:
         pass
 
@@ -11,6 +12,8 @@ class Penalizer():
             print(movie.rating)
             deviation = max_num_of_ratings - movie.num_of_ratings
             deduction = (deviation // 100000) * 0.1
-            movie.rating_penalized = round(movie.rating - deduction, 1)
+            new_rating = round(movie.rating - deduction, 1)
+            movie.rating_penalized = new_rating
+            movie.rating_adjusted = new_rating
             print(movie.rating_penalized)
             print('*' * 20)
