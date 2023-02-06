@@ -1,10 +1,12 @@
+from typing import List
+
 class RatingCalculator():
 
     def __init__(self) -> None:
         pass
 
     @staticmethod
-    def penalize_movies(movies):
+    def penalize_movies(movies: List[object]) -> None:
         max_num_of_ratings = max(movie.num_of_ratings for movie in movies)
         for movie in movies:
             deviation = max_num_of_ratings - movie.num_of_ratings
@@ -14,7 +16,7 @@ class RatingCalculator():
             movie.rating_adjusted = new_rating
 
     @staticmethod
-    def oscar_calculator(movies):
+    def oscar_calculator(movies: List[object]) -> None:
         for movie in movies:
             point = 0
             if movie.num_of_oscar_wins in [1, 2]:
@@ -27,4 +29,3 @@ class RatingCalculator():
                 point = 1.5
             movie.rating_adjusted += point
 
-        return movies

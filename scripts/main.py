@@ -27,5 +27,5 @@ def main():
     logging.info('Finished in: {} seconds.'.format(end-start))
 
     
-
-main()
+if __name__ == "__main__":
+    main()
