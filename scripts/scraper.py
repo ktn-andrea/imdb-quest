@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 from urllib.request import Request, urlopen
 from movie import Movie
 
-class ImdbScraper():
+class Scraper():
     
     def __init__(self) -> None:
         pass
