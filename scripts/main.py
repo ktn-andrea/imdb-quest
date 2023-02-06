@@ -1,4 +1,4 @@
-from scraper import ImdbScraper
+from scraper import Scraper
 from rating_calculator import RatingCalculator
 from movie import Movie
 import codecs, json
@@ -10,14 +10,13 @@ def main():
     logging.basicConfig(format='%(asctime)s - %(message)s',level=logging.INFO)
     
     logging.info('Web scraping started...')
-    Imdb_scraper = ImdbScraper()
-    uri_top_250 = "https://www.imdb.com/chart/top/"
-    Imdb_Top_20 = Imdb_scraper.get_top_20(uri_top_250)
+    ImdbScraper = Scraper()
+    Imdb_Top_20 = ImdbScraper.get_top_20("https://www.imdb.com/chart/top/")
 
     logging.info('Adjusting ratings...')
-    Movie_Oscar_Calculator = RatingCalculator()
-    Movie_Oscar_Calculator.penalize_movies(Imdb_Top_20)
-    Movie_Oscar_Calculator.oscar_calculator(Imdb_Top_20)
+    MovieCalculator = RatingCalculator()
+    MovieCalculator.penalize_movies(Imdb_Top_20)
+    MovieCalculator.oscar_calculator(Imdb_Top_20)
 
     logging.info('Writing results to results.json...')
     with codecs.open("results.json", "w", encoding='utf-8') as f:
