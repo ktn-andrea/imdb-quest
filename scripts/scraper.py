@@ -1,3 +1,5 @@
+#!/usr/bin/env python3.11
+
 from bs4 import BeautifulSoup
 from urllib.request import Request, urlopen
 from movie import Movie

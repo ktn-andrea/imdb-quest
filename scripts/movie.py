@@ -1,3 +1,5 @@
+#!/usr/bin/env python3.11
+
 class Movie(object):
 
     __slots__ = ['title', 'rating', 'num_of_ratings', 'num_of_oscar_wins', 'rating_penalized', 'rating_adjusted']
