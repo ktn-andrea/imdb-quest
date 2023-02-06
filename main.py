@@ -1,6 +1,7 @@
 from scraper import ImdbScraper
 from rating_calculator import RatingCalculator
-
+from movie import Movie
+import codecs, json
 
 def main():
 
@@ -12,15 +13,11 @@ def main():
     Movie_Oscar_Calculator.penalize_movies(Imdb_Top_20)
     Movie_Oscar_Calculator.oscar_calculator(Imdb_Top_20)
 
+    with codecs.open("results.json", "w", encoding='utf-8') as f:
+        for movie in Imdb_Top_20:
+            f.write(json.dumps(Movie.to_json(movie), indent=4, separators=(',', ': '), ensure_ascii=False))
+    
 
-    for i in Imdb_Top_20:
-        print(i.title)
-        print(i.num_of_oscar_wins)
-        print(i.rating)
-        print(i.num_of_ratings)
-        print(i.rating_penalized)
-        print(i.rating_adjusted)
-        print('*' * 20)
     
 
 main()
