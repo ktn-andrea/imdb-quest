@@ -1,8 +1,3 @@
-import os
-import requests
-from bs4 import BeautifulSoup
-from urllib.request import Request, urlopen
-from movie import Movie
 from scraper import Imdb_Scraper
 
 
@@ -18,5 +13,5 @@ def main():
         print(i.rating)
         print(i.num_of_ratings)
     
-    
+
 main()
