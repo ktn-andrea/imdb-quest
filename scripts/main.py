@@ -8,7 +8,9 @@ import logging, timeit
 import sys
 
 def main():
-
+    '''Scrapes data from IMDB and adjusts IMDB ratings based on some rules.
+        Writes the results to an output file (results.json).'''
+    
     if sys.version_info[0] != 3:
         raise Exception("Python version 3 is needed to run this program.")
 
