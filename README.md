@@ -35,6 +35,6 @@ Output result is written to __results.json__ in JSON format.
     │   ├── movie.py
     │   ├── scraper.py
     │   └── rating_calculator.py
-    ├── test_packages             
+    ├── testd_package        
     │   ├── test_scraper.py
     |   └── test_rating_calculator.py
