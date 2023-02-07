@@ -3,6 +3,7 @@
 from scraper import Scraper
 from rating_calculator import RatingCalculator
 from movie import Movie
+from typing import List
 import codecs, json
 import logging, timeit
 import sys
@@ -12,15 +13,15 @@ def main():
     '''Scrapes data from IMDB and adjusts IMDB ratings based on some rules.
         Writes the results to an output file (results.json).'''
     
-    if sys.version_info[0] != 3:
-        raise Exception("Python version 3 is needed to run this program.")
-
     start = timeit.default_timer()
     logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO)
+
+    if sys.version_info[0] != 3:
+        raise Exception("Python version 3 is needed to run this program.")
     
     logging.info('Web scraping started...')
     ImdbScraper = Scraper()
-    ImdbTop20 = ImdbScraper.get_top_20()
+    ImdbTop20: List[object] = ImdbScraper.get_top_20()
 
     logging.info('Adjusting ratings...')
     MovieCalculator = RatingCalculator()

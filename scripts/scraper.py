@@ -19,7 +19,7 @@ class Scraper():
                 - title
                 - rating
                 - number of rating
-                - number of Oscars -> scrapes seperately from the web page of the given movie'''
+                - number of Oscars -> scrapes seperately in get_oscar_wins() from the web page of the given movie'''
         req_top_250 = Request(URL , headers=HEADERS)
         soup_top_250 = BeautifulSoup(urlopen(req_top_250).read(), 'html.parser')
 

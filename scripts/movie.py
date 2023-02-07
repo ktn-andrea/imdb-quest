@@ -13,7 +13,7 @@ class Movie(object):
         self.rating_adjusted = rating_adjusted
 
     def to_json(self):
-        '''Generates Json by extracting key-value pairs of the objects.'''
+        '''Returns (Movie) object as Json object by extracting attributes as key-value pairs.'''
         return {key : getattr(self, key, None) for key in self.__slots__}
     
        
