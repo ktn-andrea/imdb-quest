@@ -4,7 +4,7 @@ class Movie(object):
 
     __slots__ = ['title', 'rating', 'num_of_ratings', 'num_of_oscar_wins', 'rating_penalized', 'rating_adjusted']
     
-    def __init__(self, title, rating, num_of_ratings, num_of_oscar_wins, rating_penalized, rating_adjusted):
+    def __init__(self, title: str, rating: float, num_of_ratings: int, num_of_oscar_wins: int, rating_penalized: float, rating_adjusted: float):
         self.title = title
         self.rating = rating
         self.num_of_ratings  = num_of_ratings
