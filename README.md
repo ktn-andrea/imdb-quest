@@ -1,4 +1,4 @@
-# :hot_pepper: The Big IMDB quest :movie_camera:
+# :movie_camera: The Big IMDB quest
 An application that scrapes data from IMDB and adjusts IMDB ratings.
 
 
